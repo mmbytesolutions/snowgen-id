@@ -1,17 +1,17 @@
-# MMBytes Snowflake ID Generator for TypeScript (snowgen-id)
+## MMBytes Snowflake ID Generator for TypeScript (snowgen-id)
 
 snowgen-id is a TypeScript library for generating unique IDs based on the Snowflake algorithm. It provides a customizable and efficient way to generate 64-bit IDs using components such as timestamp, worker ID, datacenter ID, and sequence number.
 
 <sub>_Disclaimer: This library takes heavy inspiration from the [rakheyl/snowflake-uuid](https://github.com/rakheyl/snowflake-uuid) project, but it has been rewritten to fit specific use cases._</sub>
 
-## Features
+### Features
 
 - Customizable bit lengths for worker ID, datacenter ID, and sequence to accommodate various scaling needs.
 - Built-in protection against clock going backwards.
 - Ability to parse generated IDs to extract timestamp, worker ID, datacenter ID, and sequence number.
 - Independent parser function for parsing IDs without creating a worker instance.
 
-## Installation
+### Installation
 
 To install snowgen-id, use the following command:
 
@@ -24,7 +24,7 @@ You can also use your preferred package manager:
 - `npm i @mmbytes/snowgen-id`
 - `pnpm i @mmbytes/snowgen-id`
 
-## Usage
+### Usage
 
 Import the `createWorker` function from the library and initialize it with your worker and datacenter IDs, along with optional configuration options.
 
@@ -67,19 +67,17 @@ console.log(`Parsed ID:`, parsedId);
 // }
 ```
 
-## API Reference
+**API Reference**
 
-### `createWorker(workerId: bigint, datacenterId: bigint, options?: WorkerOptions)`
+Create a new worker instance capable of generating and parsing unique IDs.
+`createWorker(workerId: bigint, datacenterId: bigint, options?: WorkerOptions)`
 
-Creates a new worker instance capable of generating and parsing unique IDs.
-
-#### Parameters
-
+Parameters:
 - `workerId`: Unique ID of the worker node.
 - `datacenterId`: Unique ID of the data center.
 - `options`: Optional configuration for ID generation.
 
-#### Returns
+**Returns**
 
 An object with the following methods:
 
@@ -88,16 +86,16 @@ An object with the following methods:
 - `getCurrentSequence()`: Returns the current sequence number.
 - `getLastTimestamp()`: Returns the last timestamp used for ID generation.
 
-### `parseId(id: bigint, options?: WorkerOptions)`
+`parseId(id: bigint, options?: WorkerOptions)`
 
 Parses a given ID into its components.
 
-#### Parameters
+**Parameters**
 
 - `id`: The ID to parse.
 - `options`: Optional configuration for parsing the ID.
 
-#### Returns
+**Returns**
 
 An object representing the parsed ID components:
 
@@ -105,8 +103,8 @@ An object representing the parsed ID components:
 - `workerId`: The worker ID component of the ID.
 - `datacenterId`: The datacenter ID component of the ID.
 - `sequence`: The sequence number component of the ID.
-
-### `WorkerOptions`
+----
+`WorkerOptions`
 
 Configuration options for the ID generator.
 
@@ -115,6 +113,6 @@ Configuration options for the ID generator.
 - `datacenterIdBits`: Number of bits allocated for the datacenter ID. Default is `5`.
 - `sequenceBits`: Number of bits allocated for the sequence number. Default is `12`.
 
-## Contributing
+### Contributing
 
 Contributions are welcome! Please feel free to submit a pull request.
