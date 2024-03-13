@@ -5,7 +5,7 @@ import {
   maxWorkerId,
   maxDatacenterId,
   sequenceMask,
-} from ".";
+} from "./config";
 
 /**
  * Parses a given bigint ID into its components based on the provided options.

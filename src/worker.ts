@@ -6,7 +6,8 @@ import {
   maxDatacenterId,
   maxWorkerId,
   sequenceMask,
-} from ".";
+  type CreateWorker,
+} from "./config";
 import { parseId } from "./parser";
 
 /**
@@ -21,7 +22,7 @@ export const createWorker = (
   workerId: bigint,
   datacenterId: bigint,
   options: WorkerOptions = defaultOptions
-) => {
+): CreateWorker => {
   const {
     epoch = 1609459200000n,
     workerIdBits = 5,

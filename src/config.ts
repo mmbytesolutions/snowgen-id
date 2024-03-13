@@ -22,14 +22,23 @@ export const defaultOptions: WorkerOptions = {
   sequenceBits: 12,
 };
 
+export interface CreateWorker {
+  nextId: () => bigint;
+  getCurrentSequence: () => bigint;
+  getLastTimestamp: () => bigint;
+  parse: (id: bigint) => Parsedbigint;
+  workerId: bigint;
+  datacenterId: bigint;
+}
+
 /* Bit mask for the sequence number */
-export const maxWorkerId = (workerIdBits: number) =>
+export const maxWorkerId = (workerIdBits: number): bigint =>
   -1n ^ (-1n << BigInt(workerIdBits));
 
 /* Bit mask for the datacenter ID */
-export const maxDatacenterId = (datacenterIdBits: number) =>
+export const maxDatacenterId = (datacenterIdBits: number): bigint =>
   -1n ^ (-1n << BigInt(datacenterIdBits));
 
 /* Bit mask for the sequence number */
-export const sequenceMask = (sequenceBits: number) =>
+export const sequenceMask = (sequenceBits: number): bigint =>
   -1n ^ (-1n << BigInt(sequenceBits));
