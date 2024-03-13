@@ -1,4 +1,4 @@
-## MMBytes Snowflake ID Generator for TypeScript (snowgen-id)
+## Snowflake ID Generator for TypeScript (snowgen-id)
 
 snowgen-id is a TypeScript library for generating unique IDs based on the Snowflake algorithm. It provides a customizable and efficient way to generate 64-bit IDs using components such as timestamp, worker ID, datacenter ID, and sequence number.
 
