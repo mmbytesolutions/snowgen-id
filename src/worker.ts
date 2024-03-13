@@ -1,5 +1,3 @@
-// Export individual components for modular use
-
 import {
   type WorkerOptions,
   defaultOptions,
@@ -11,12 +9,11 @@ import {
 import { parseId } from "./parser";
 
 /**
- * Creates a new worker that can generate unique IDs with the specified options.
- * Validates the provided worker and datacenter IDs against the configuration constraints.
- * @param workerId - The unique ID of the worker node.
- * @param datacenterId - The unique ID of the data center.
- * @param options - Configuration options for the ID generation.
- * @returns An object containing functions to generate IDs, get current sequence, last timestamp, and parse IDs.
+ * Creates a new worker instance.
+ * @param workerId The worker ID of the worker instance.
+ * @param datacenterId The datacenter ID of the worker instance.
+ * @param options Optional configuration options for the worker.
+ * @returns The created worker instance.
  */
 export const createWorker = (
   workerId: bigint,

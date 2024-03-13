@@ -8,10 +8,10 @@ import {
 } from "./config";
 
 /**
- * Parses a given bigint ID into its components based on the provided options.
- * @param id - The bigint ID to parse.
- * @param options - Configuration options for the ID generation.
- * @returns An object representing the parsed ID components.
+ * Parses a snowflake ID into its components.
+ * @param id The snowflake ID to parse.
+ * @param options Optional configuration options for parsing.
+ * @returns The parsed components of the snowflake ID.
  */
 export const parseId = (
   id: bigint,
