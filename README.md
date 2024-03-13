@@ -55,11 +55,10 @@ You can also use the independent `parseId` function to parse IDs without creatin
 ```typescript
 import { parseId } from "@mmbytes/snowgen-id";
 
-const id = 1617202485447688192n;
-const parsedId = parseId(id);
-console.log(`Parsed ID:`, parsedId);
+const id = user.id  // your table row id
+console.log(`Parsed ID:`, parseId(id));
 // Example output:
-// Parsed ID: {
+// Object: {
 //   timestamp: 1617202485447n,
 //   workerId: 0n,
 //   datacenterId: 1n,
