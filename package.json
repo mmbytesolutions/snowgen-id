@@ -1,6 +1,6 @@
 {
   "name": "@mmbytes/snowgen-id",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "# MMBytes Snowflake ID Generator for TypeScript (snowgen-id)",
   "module": "index.ts",
   "type": "module",
