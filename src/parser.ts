@@ -11,12 +11,23 @@ import {
  * Parses a snowflake ID into its components.
  * @param id The snowflake ID to parse.
  * @param options Optional configuration options for parsing.
- * @returns The parsed components of the snowflake ID.
+ * @returns The parsed components of the snowflake ID with a toStr method.
  */
 export const parseId = (
   id: bigint,
   options: WorkerOptions = defaultOptions
-): Parsedbigint => {
+): Parsedbigint & {
+  /**
+   * Converts the parsed bigint components to strings.
+   * @returns The parsed components as strings.
+   */
+  toStr: () => {
+    timestamp: string;
+    workerId: string;
+    datacenterId: string;
+    sequence: string;
+  };
+} => {
   const {
     epoch = 1609459200000n,
     workerIdBits = 5,
@@ -41,5 +52,15 @@ export const parseId = (
     workerId,
     datacenterId,
     sequence,
+    /**
+     * Converts the parsed bigint components to strings.
+     * @returns The parsed components as strings.
+     */
+    toStr: () => ({
+      timestamp: timestamp.toString(),
+      workerId: workerId.toString(),
+      datacenterId: datacenterId.toString(),
+      sequence: sequence.toString(),
+    }),
   };
 };

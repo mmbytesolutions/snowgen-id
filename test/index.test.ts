@@ -67,4 +67,25 @@ describe("snowgen-id ID Generator", () => {
 
     expect(lastTimestamp).toBeGreaterThan(0n);
   });
+
+  test("parseId should return a string representation of the parsed components", () => {
+    const workerId = 1n;
+    const datacenterId = 1n;
+    const timestamp = 1609459200000n;
+    const sequence = 1n;
+
+    const id =
+      ((timestamp - 1609459200000n) << 22n) |
+      (datacenterId << 17n) |
+      (workerId << 12n) |
+      sequence;
+    const parsed = parseId(id);
+
+    expect(parsed.toStr()).toStrictEqual({
+      timestamp: "1609459200000",
+      workerId: "1",
+      datacenterId: "1",
+      sequence: "1",
+    });
+  });
 });

@@ -1,7 +1,7 @@
 {
   "name": "@mmbytes/snowgen-id",
-  "version": "1.0.3",
-  "description": "# MMBytes Snowflake ID Generator for TypeScript (snowgen-id)",
+  "version": "1.0.5",
+  "description": "# Snowflake ID Generator for TypeScript (snowgen-id)",
   "module": "index.ts",
   "type": "module",
   "scripts": {
@@ -10,13 +10,19 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmbytesolution/snowgen-id.git"
+    "url": "git+https://github.com/mmbytesolutions/snowgen-id.git"
   },
-  "homepage": "https://github.com/mmbytesolution/snowgen-id#readme",
+  "homepage": "https://github.com/mmbytesolutions/snowgen-id#readme",
   "bugs": {
-    "url": "https://github.com/mmbytesolution/snowgen-id/issues"
+    "url": "https://github.com/mmbytesolutions/snowgen-id/issues"
   },
   "keywords": [
     "uuid",
